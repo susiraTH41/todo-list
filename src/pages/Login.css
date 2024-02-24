@@ -1,0 +1,8 @@
+.ggggggggg{
+    border: 1px solid var(--reactist-inputs-idle);
+    border-radius: var(--reactist-border-radius-large);
+    overflow: clip;
+    padding: var(--reactist-spacing-small);
+    padding-bottom: var(--reactist-spacing-xsmall);
+  
+}
