@@ -15,7 +15,7 @@ export const Navbar = () => {
   return (
     <>
       <IconContext.Provider value={{ className: 'icon-bar' }}>
-        <div className='navbar'>
+        <div className='navbar' >
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
@@ -42,7 +42,7 @@ export const Navbar = () => {
             })}
             <li className='navbar-footer'>
               <Link to='/login' >
-                <button className='test'>
+                <button className='logoutBtn'>
                   log out
                   <LuIcons.LuLogOut  />
                 </button>      

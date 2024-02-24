@@ -1,8 +1,109 @@
-.ggggggggg{
-    border: 1px solid var(--reactist-inputs-idle);
-    border-radius: var(--reactist-border-radius-large);
+.loginContainer {
+    display: flex;    
+    border: none;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    padding: 3px;
+
+}
+
+.boxContainer {
+    border: 1px solid #fcd3cf; 
+    border-radius: 25px;
+    background-color: #fff;
+    height: 450px;
+    width: 450px;
+    display: grid;
+    grid-row-gap: 10px;
+    padding: 50px;
+}
+
+
+.boxInputContainer{
+    border: 1px solid #e6e6e6;
+    border-radius:10px;
     overflow: clip;
-    padding: var(--reactist-spacing-small);
-    padding-bottom: var(--reactist-spacing-xsmall);
-  
+    padding: 4px 8px;
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+
+}
+
+.boxInputContainer:focus-within{
+    border: 1px solid #b8b8b8;
+}
+
+.boxInput{
+    border:none;
+    outline: none;
+    height: 24px;
+    padding: 0;
+}
+
+.boxPasswordInputFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -5px 
+}
+
+.boxRegisterFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.loginBtn {
+    background-color: #dc4c3e;
+    color: #fff;
+    min-width: 68px;
+    border: none;
+    font-size: 15px;
+    font-weight: 900;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.loginBtn:hover {
+    background-color: #c3392c;
+}
+
+.boxInput:focus,.boxInput:active{
+    border:none;
+    outline: none;
+    height: 24px;
+    padding: 0;
+}
+
+
+.text-size12{
+    padding-bottom: 8px;
+    font-size: 12px;
+    margin-left: 0px !important;
+    font-weight: bold;
+
+}
+
+
+
+.text-size13{
+    font-size: 13px;
+    font-weight: 400;
+    color: #3d3d3d;
+    margin-left: 0px !important;
+
+}
+
+
+
+.text-size32{
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 0px !important;
+
 }

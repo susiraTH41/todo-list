@@ -6,6 +6,7 @@ import Navbar from './components/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import Member from './pages/Member.jsx'
 import Login from './pages/Login.jsx'
+import Register from './pages/Register.jsx'
 
 import {
   createBrowserRouter,
@@ -19,7 +20,6 @@ const router = createBrowserRouter([
     <div>
       <Navbar/>
       <Home/>
-
     </div>    
     ),
   },
@@ -36,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login/>,
+  },
+  {
+    path: "/register",
+    element: <Register/>,
   },
 ]);
 

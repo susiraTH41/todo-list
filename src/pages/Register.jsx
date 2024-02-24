@@ -3,23 +3,38 @@ import './Login.css';
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-function Login() {
+function Register() {
     const [visible, setVisible] = useState(false);
 
     const showHidePass = () => setVisible(!visible);
+
+    async function postUserName() {
+        try {
+            await axios.post(`${baseUrl}/todos`, {
+                id: todos.length + 1,
+                name: firstName,
+                status: 'status ' + todos.length + 1,
+                check: isDisable
+            })
+
+            await fetchTodo()
+            alert('add successful!')
+
+        } catch (error) {
+            console.log('error', error)
+        }
+    }
 
     return (
         <>
             <div className='loginContainer'>
                 <div className='boxContainer'>
                     <span className='text-size32'>
-                        Login
+                        Register
                     </span>
                     <div className='boxInputContainer'>
-
                         <span className='text-size12'>
-                        User Name
-
+                            User Name
                         </span>
                         <input type='text' className='boxInput' placeholder="Enter your user name..." >
                         </input>
@@ -37,24 +52,22 @@ function Login() {
                             </div>
                         </div>
                     </div>
-                    <Link to='/' >
-                        <button type='sumbit'className='loginBtn'>
-                            Log in
+                    <Link to='/login' >
+                        <button className='loginBtn' onClick={() => postUserName()}>
+                            Register
                         </button>
                     </Link>
                     <div className='boxRegisterFlex'>
                         <p className='text-size13'>
-                            Don’t have an account?
+                            Already signed up?
 
                         </p>
-                        <Link to='/register'>
+                        <Link to='/login'>
                             <p className='text-size13'>
-                                Sign up
+                                Go to login
                             </p>
                         </Link>
                     </div>
-
-
                 </div>
 
             </div>
@@ -63,4 +76,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Register;

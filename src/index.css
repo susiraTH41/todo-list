@@ -17,10 +17,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --reactist-inputs-idle : #e6e6e6;
-  --reactist-border-radius-large: 10px;
-  --reactist-spacing-small: 8px;
-  --reactist-spacing-xsmall: 4px;
+
 }
 
 a {
