@@ -2,7 +2,7 @@
   background-color: #fafafa;
   height: 80px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -33,8 +33,9 @@
 }
 
 .nav-text {
+  background-color: #f6efee;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   padding: 8px 0px 8px 16px;
   list-style: none;
@@ -42,6 +43,7 @@
 }
 
 .nav-text a {
+  background-color: #f6efee;
   text-decoration: none;
   color: #c3392c;
   font-size: 18px;
@@ -51,21 +53,26 @@
   align-items: center;
   padding: 0 16px;
   border-radius: 4px;
+  
 }
 
 .text {
   color: #c3392c;
   font-size: 28px;
   font-weight: bolder;
+  background-color: #f6efee;
 }
 
 
 .nav-text a:hover {
-  background-color: #fee6e3;
+  border: 1px solid #c48680;
+  border-radius: 10px;
+
 }
 
 .nav-menu-items {
   width: 100%;
+
 }
 
 .navbar-toggle {
@@ -76,13 +83,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 0px 28px;
+  
 }
 
 span {
   margin-left: 16px;
+  background-color: #f6efee;
+
 }
 
 .navbar-footer {
+  background-color: #f6efee;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -92,6 +103,7 @@ span {
 
 .navbar-footer a {
   text-decoration: none;
+  background-color: #f6efee;
 
 }
 
@@ -99,12 +111,14 @@ span {
   width: 24px;
   height: 24px;
   color: #c3392c;
+  background-color: transparent;
+
 }
 
 .logoutBtn {
   margin: 15px;
  /* border-color: transparent;*/
- border: none;
+  border: none;
   border-radius: 10px;
   background-color: transparent;
   display: flex;

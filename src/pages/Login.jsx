@@ -10,28 +10,26 @@ function Login() {
 
     return (
         <>
-            <div className='loginContainer'>
+            <section className='loginContainer'>
                 <div className='boxContainer'>
-                    <span className='text-size32'>
+                    <p className='text-size32'>
                         Login
-                    </span>
+                    </p>
                     <div className='boxInputContainer'>
 
-                        <span className='text-size12'>
+                        <p className='text-size12'>
                         User Name
 
-                        </span>
-                        <input type='text' className='boxInput' placeholder="Enter your user name..." >
-                        </input>
+                        </p>
+                        <input type='text' className='boxInput' placeholder="Enter your user name..." />
                     </div>
 
                     <div className='boxInputContainer'>
-                        <span className='text-size12'>
+                        <p className='text-size12'>
                             Password
-                        </span>
+                        </p>
                         <div className='boxPasswordInputFlex'>
-                            <input type={visible ? "text" : "password"} className='boxInput' placeholder="Enter your password...">
-                            </input>
+                            <input type={visible ? "text" : "password"} className='boxInput' placeholder="Enter your password..."/>
                             <div onClick={showHidePass} style={{ margin: "red" }} >
                                 {visible ? <FaIcons.FaRegEye /> : <FaIcons.FaRegEyeSlash />}
                             </div>
@@ -47,7 +45,7 @@ function Login() {
                             Don’t have an account?
 
                         </p>
-                        <Link to='/register'>
+                        <Link to='/register' style={{ background: "#fff"}}>
                             <p className='text-size13'>
                                 Sign up
                             </p>
@@ -57,7 +55,7 @@ function Login() {
 
                 </div>
 
-            </div>
+            </section>
         </>
 
     );

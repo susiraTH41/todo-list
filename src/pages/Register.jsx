@@ -2,22 +2,31 @@ import React, { useState } from 'react';
 import './Login.css';
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 function Register() {
     const [visible, setVisible] = useState(false);
-
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const [todo, setTodo] = useState({
+        msg :''
+    })
     const showHidePass = () => setVisible(!visible);
+    const baseUrl = 'http://localhost:8000';
 
     async function postUserName() {
         try {
-            await axios.post(`${baseUrl}/todos`, {
-                id: todos.length + 1,
-                name: firstName,
-                status: 'status ' + todos.length + 1,
-                check: isDisable
-            })
+            console.log('userName', userName)
 
-            await fetchTodo()
+            const response = await axios.post(`${baseUrl}/user`, {
+                username: userName,
+                password: password,
+
+            })
+            
+            setTodo(response.data)
+            console.log('msg : ', response.data)
+
             alert('add successful!')
 
         } catch (error) {
@@ -27,42 +36,45 @@ function Register() {
 
     return (
         <>
-            <div className='loginContainer'>
+            <section className='loginContainer'>
                 <div className='boxContainer'>
-                    <span className='text-size32'>
+                    <p className='text-size32'>
                         Register
-                    </span>
+                    </p>
                     <div className='boxInputContainer'>
-                        <span className='text-size12'>
+                        <p className='text-size12'>
                             User Name
-                        </span>
-                        <input type='text' className='boxInput' placeholder="Enter your user name..." >
-                        </input>
+                        </p>
+                        <input type='text'
+                            value={userName}
+                            className='boxInput'
+                            onChange={e => setUserName(e.target.value)}
+                            placeholder="Enter your user name..." />
                     </div>
 
                     <div className='boxInputContainer'>
-                        <span className='text-size12'>
+                        <p className='text-size12'>
                             Password
-                        </span>
+                        </p>
                         <div className='boxPasswordInputFlex'>
-                            <input type={visible ? "text" : "password"} className='boxInput' placeholder="Enter your password...">
-                            </input>
+                            <input type={visible ? "text" : "password"}
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                className='boxInput'
+                                placeholder="Enter your password..." />
                             <div onClick={showHidePass} style={{ margin: "red" }} >
                                 {visible ? <FaIcons.FaRegEye /> : <FaIcons.FaRegEyeSlash />}
                             </div>
                         </div>
                     </div>
-                    <Link to='/login' >
                         <button className='loginBtn' onClick={() => postUserName()}>
                             Register
                         </button>
-                    </Link>
                     <div className='boxRegisterFlex'>
                         <p className='text-size13'>
                             Already signed up?
-
                         </p>
-                        <Link to='/login'>
+                        <Link to='/login' style={{ background: "#fff"}}>
                             <p className='text-size13'>
                                 Go to login
                             </p>
@@ -70,7 +82,7 @@ function Register() {
                     </div>
                 </div>
 
-            </div>
+            </section>
         </>
 
     );
